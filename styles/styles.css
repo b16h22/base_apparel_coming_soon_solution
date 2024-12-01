@@ -1,0 +1,190 @@
+
+    * {
+      font-family: "Josefin Sans";
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      background-image: url(../images/bg-pattern-desktop.svg);
+      background-position-x: -5%;
+    }
+
+    .cover-img-mobile {
+      display: none;
+    }
+
+    .cover-img-desktop {
+      min-width: 42%;
+    }
+
+    .main-layout {
+      height: 100%;
+      padding-left: 9.5rem;
+      padding-right: 12rem;
+    }
+
+    .logo {
+      margin-top: 4rem;
+    }
+
+    .title-area {
+      margin-top: 7rem;
+    }
+
+    /* Input */
+
+    .email-section {
+      position: relative;
+    }
+
+    #email {
+      padding: 1.25rem;
+      margin-top: 1rem;
+      border-radius: 2rem;
+      min-width: 90%;
+      border: 1px solid hsl(0, 36%, 70%);
+      outline: none;
+      background-color: transparent;
+    }
+
+    #email:focus {
+      border: 2px solid hsl(0, 36%, 70%);
+    }
+
+    #email:hover {
+      border: 2px solid hsl(0, 36%, 70%);
+    }
+
+    #email::placeholder {
+      color: hsla(0, 36%, 70%, 0.8);
+      font-size: 1rem;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+}
+    .error-icon {
+      position: absolute;
+      top: 2rem;
+      right: 7rem;
+    }
+
+    /* Submit button */
+
+    .submit-button {
+      background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+      border: none;
+      border-radius: 2rem;
+      padding-block: 1rem;
+      padding-inline: 2.5rem;
+      color: white;
+      box-shadow: 0 8px 16px hsla(0, 74%, 74%, 0.4);
+      position: absolute;
+      right: 0;
+      top: 1rem;
+    }
+
+    .submit-button:hover {
+      background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 80%, 86%));
+    }
+
+    /* Text */
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 600;
+      color: hsl(0, 6%, 24%);
+      text-transform: uppercase;
+      line-height: 4rem;
+      letter-spacing: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .title span {
+      color: hsl(0, 36%, 70%);
+      font-weight: 300;
+    }
+
+    .subtitle {
+      color: hsl(0, 36%, 70%);
+      font-weight: 400;
+      line-height: 1.5rem;
+    }
+
+    .error-message {
+      font-size: 0.8em;
+      color: hsl(0, 93%, 68%);
+      margin-left: 1.2rem;
+    }
+
+    .success-message {
+      font-size: 0.8em;
+      color: hsl(0, 36%, 70%);
+      margin-left: 1.2rem;
+    }
+
+    @media screen and (max-width:48em) {
+
+      body {
+        background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+      }
+
+      .container {
+        display: block;
+        background-image: none;
+      }
+
+      .logo {
+        margin-block: 2rem;
+        margin-left: 2rem;
+      }
+
+      .cover-img-mobile {
+        display: block;
+        width: 100%;
+      }
+
+      .cover-img-desktop {
+        display: none;
+      }
+  
+      .main-layout {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .title-area {
+        margin-top: 4rem;
+        padding-inline: 4rem;
+        text-align: center;
+      }
+
+      .email-section {
+        margin: 3rem;
+        margin-top: 0;
+        align-items: center;
+      }
+
+      #email {
+        min-width: 88%;
+      }
+
+      .submit-button {
+        padding-inline: 2rem;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+      }
+
+    }

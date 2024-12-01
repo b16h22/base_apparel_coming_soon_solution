@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Manrope:wght@200..800&family=Overpass:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+  <script src="https://kit.fontawesome.com/f104e08acd.js" crossorigin="anonymous"></script>
+
+  <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+</head>
+<body>
+  <div class="container">
+    <div class="main-layout">
+      <img class="logo" src="./images/logo.svg" alt="logo">
+      <img class="cover-img-mobile" src="./images/hero-mobile.jpg" alt="cover-image">
+      <div class="title-area">
+        <h1 class="title"><span>We're</span><br>coming<br>soon</h1>
+        <p class="subtitle">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals."</p>
+      </div>
+      <div class="email-section">
+        <input id="email" type="email" placeholder="Email Address">
+        <button id="submit" class="submit-button"><img class="arrow" src="./images/icon-arrow.svg" alt="arrow"></button>
+        <img id="error-icon" class="error-icon" src="./images/icon-error.svg" alt="error">
+        <p id="error" class="error-message">Please provide a valid email</p>
+        <p id="success" class="success-message">Email successfully submitted</p>
+      </div>
+    </div>
+    <img class="cover-img-desktop" src="./images/hero-desktop.jpg" alt="cover-image">
+  </div>
+
+  <script>
+    let submitButton = document.getElementById("submit");
+    submitButton.onclick = submitEmail;
+
+    let email = document.getElementById("email");
+    let errorMessage = document.getElementById("error");
+    let successMessage = document.getElementById("success");
+    let errorIcon = document.getElementById("error-icon");
+    
+    errorMessage.style.display = "none";
+    successMessage.style.display = "none";
+    errorIcon.style.display = "none";
+
+    function submitEmail() {
+      let emailAddress = email.value;
+      const regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      const isValid = regEx.test(emailAddress);
+      checkEmail(isValid);
+    }
+
+    function checkEmail(isValid) {
+      if(isValid == false) {
+        errorIcon.style.display = "block";
+        errorMessage.style.display = "block";
+        successMessage.style.display = "none";
+        document.getElementById("email").style.borderColor = "hsl(0, 93%, 68%)";
+      } else {
+        errorIcon.style.display = "none";
+        errorMessage.style.display = "none";
+        successMessage.style.display = "block";
+        document.getElementById("email").style.borderColor = "hsl(0, 36%, 70%)";
+      }
+    }
+  </script>
+</body>
+</html>
