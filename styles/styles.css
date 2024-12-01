@@ -165,8 +165,9 @@
 
       .title-area {
         margin-top: 4rem;
-        padding-inline: 4rem;
+        padding-inline: 3rem;
         text-align: center;
+        align-items: center;
       }
 
       .email-section {
@@ -181,6 +182,10 @@
 
       .submit-button {
         padding-inline: 2rem;
+      }
+
+      .title {
+        font-size: 3rem;
       }
 
       .subtitle {
