@@ -165,9 +165,9 @@
       }
 
       .title-area {
+        margin-inline: auto;
         margin-top: 4rem;
         text-align: center;
-        align-items: center;
       }
 
       .email-section {
@@ -185,6 +185,7 @@
       }
 
       .title {
+        text-align: center;
         font-size: 3rem;
       }
 
