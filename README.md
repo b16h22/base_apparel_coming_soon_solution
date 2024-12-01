@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github repo](https://github.com/b16h22/article_preview_component_solution)
-- Live Site URL: [Github pages](https://b16h22.github.io/article_preview_component_solution/)
+- Solution URL: [Github repo](https://github.com/b16h22/base_apparel_coming_soon_solution)
+- Live Site URL: [Github pages](https://b16h22.github.io/base_apparel_coming_soon_solution/)
 
 ## My process
 
