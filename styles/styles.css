@@ -165,7 +165,6 @@
 
       .title-area {
         margin-top: 4rem;
-        padding-inline: 3rem;
         text-align: center;
         align-items: center;
       }
@@ -190,6 +189,7 @@
 
       .subtitle {
         font-size: 1.1rem;
+        margin-inline: 3rem;
       }
 
     }
