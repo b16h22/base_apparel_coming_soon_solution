@@ -50,19 +50,20 @@ Learned to validate email addresses using JS regular expression.
     let email = document.getElementById("email");
     
     function submitEmail() {
-      let emailAddress = email.value;
-      const regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      const isValid = regEx.test(emailAddress);
-      checkEmail(isValid);
+      if (email.validity.valueMissing) {
+        showError();
+      } else if (email.validity.typeMismatch) {
+        showError();
+      } else {
+        hideError();
+      }
     }
 ```
 
 ### Useful resources
 
 - [HTML DOM Elements](https://www.w3schools.com/js/js_htmldom_elements.asp) - This helped me learn about HTML DOM elements and methods to access them.
-- [JS Regular Expressions](https://www.w3schools.com/js/js_regexp.asp) - This helped me learn about JS regular expressions.
-
-- [RegEx for Email Validation](https://zparacha.com/validate-email-address-using-javascript-regular-expression) - This helped me understand the regEx required for email validation.
+- [Email Validation](https://developer.mozilla.org/en-US/docs/Web/API/ValidityState) - This helped me understand the validitystate API for validating Email and other input fields.
 
 ## Author
 
