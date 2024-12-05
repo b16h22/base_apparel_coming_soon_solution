@@ -56,11 +56,11 @@
     }
 
     #email:focus {
-      border: 2px solid hsl(0, 36%, 70%);
+      border: 1.5px solid hsl(0, 36%, 60%);
     }
 
     #email:hover {
-      border: 2px solid hsl(0, 36%, 70%);
+      border: 1.5px solid hsl(0, 36%, 60%);
     }
 
     #email::placeholder {

@@ -23,49 +23,53 @@
         <p class="subtitle">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals."</p>
       </div>
       <div class="email-section">
-        <input id="email" type="email" placeholder="Email Address">
+        <input id="email" type="email" placeholder="Email Address" required="true">
         <button id="submit" class="submit-button"><img class="arrow" src="./images/icon-arrow.svg" alt="arrow"></button>
         <img id="error-icon" class="error-icon" src="./images/icon-error.svg" alt="error">
         <p id="error" class="error-message">Please provide a valid email</p>
-        <p id="success" class="success-message">Email successfully submitted</p>
+        <p id="success" class="success-message">Subscribed to our latest news!</p>
       </div>
     </div>
     <img class="cover-img-desktop" src="./images/hero-desktop.jpg" alt="cover-image">
   </div>
 
   <script>
-    let submitButton = document.getElementById("submit");
-    submitButton.onclick = submitEmail;
-
     let email = document.getElementById("email");
     let errorMessage = document.getElementById("error");
     let successMessage = document.getElementById("success");
     let errorIcon = document.getElementById("error-icon");
+    let submitButton = document.getElementById("submit");
+    
+    submitButton.onclick = submitEmail;
     
     errorMessage.style.display = "none";
     successMessage.style.display = "none";
     errorIcon.style.display = "none";
 
     function submitEmail() {
-      let emailAddress = email.value;
-      const regEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-      const isValid = regEx.test(emailAddress);
-      checkEmail(isValid);
-    }
-
-    function checkEmail(isValid) {
-      if(isValid == false) {
-        errorIcon.style.display = "block";
-        errorMessage.style.display = "block";
-        successMessage.style.display = "none";
-        document.getElementById("email").style.borderColor = "hsl(0, 93%, 68%)";
+      if (email.validity.valueMissing) {
+        showError();
+      } else if (email.validity.typeMismatch) {
+        showError();
       } else {
-        errorIcon.style.display = "none";
-        errorMessage.style.display = "none";
-        successMessage.style.display = "block";
-        document.getElementById("email").style.borderColor = "hsl(0, 36%, 70%)";
+        hideError();
       }
     }
+
+    function showError() {
+      errorIcon.style.display = "block";
+      errorMessage.style.display = "block";
+      successMessage.style.display = "none";
+      document.getElementById("email").style.borderColor = "hsl(0, 93%, 68%)";      
+    }
+
+    function hideError() {
+      errorIcon.style.display = "none";
+      errorMessage.style.display = "none";
+      successMessage.style.display = "block";
+      document.getElementById("email").style.borderColor = "hsl(0, 36%, 70%)";
+    }
+
   </script>
 </body>
 </html>
